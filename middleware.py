@@ -14,7 +14,7 @@ def render_template(request, template, context):
       ]
   templates = Environment(loader=FileSystemLoader(template_dirs))
 
-  template = templates.get_template('index.html')
+  template = templates.get_template(template)
   body = template.render(context)
 
   if not body:
