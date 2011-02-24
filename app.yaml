@@ -1,0 +1,29 @@
+application: empty-app
+version: 1
+runtime: python
+api_version: 1
+
+builtins:
+- datastore_admin: on
+
+handlers:
+- url: /img/
+  static_dir: static/img
+- url: /css/
+  static_dir: static/css
+- url: /js/
+  static_dir: static/js
+
+- url: /favicon.ico
+  static_files: static/img/favicon.ico
+  upload: static/img/favicon.ico
+- url: /cache.manifest
+  static_files: static/cache.manifest
+  upload: static/cache.manifest
+- url: /robots.txt
+  static_files: static/robots.txt
+  upload: static/robots.txt
+
+- url: /.*
+  script: wsgi.py
+
