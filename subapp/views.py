@@ -10,7 +10,7 @@ from settings import settings
 @wsgify(RequestClass=Request)
 def index(request):
   ids = ['foo','bar','baz']
-  example_obj = {
+  obj = {
       'title': 'Title',
       'desc': 'Description',
       'img': 'http://docs.python.org/_static/py.png'
@@ -18,7 +18,7 @@ def index(request):
   objects = dict([ (id,obj) for id in ids ] )
 
   return render_template(request, 'index.html', {
-    'objects': ['foo','bar','baz'],
+    'objects': objects,
     })
 
 @wsgify(RequestClass=Request)
