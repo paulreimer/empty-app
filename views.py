@@ -1,5 +1,3 @@
-from exc import *
-
 # webapp
 import google.appengine.ext.webapp
 from google.appengine.ext.webapp import Request, Response
