@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Subapp{% endblock %}
+
+{% block content %}
+<div data-role="page">
+
+  <div data-role="header">
+    <a href="/subapp/add" data-rel="dialog" data-transition="pop" data-icon="plus">Add</a>
+    <h1>Subapp</h1>
+    <a href="/login" data-rel="dialog" data-transition="pop" data-icon="gear" class="ui-btn-right">Login</a>
+  </div>
+
+  <div data-role="content">
+      <ul data-role="listview" data-split-icon="delete" data-split-theme="c">
+        {% for id in objects %}
+        <li>
+          <img src="{{ objects[id].img }}" onerror="this.src='/img/notfound.png';" />
+          <h3><a href="/objects/{{ id }}">{{ objects[id].title }}</a></h3>
+          <p>{{ objects[id].desc }}</p>
+          <a href="/objects/{{ id }}/delete">Delete</a>
+        </li>
+        {% endfor %}
+      </ul>
+  </div>
+</div>
+{% endblock %}
+
