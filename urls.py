@@ -1,3 +1,6 @@
+[/]
+  GET views:index
+
 /subapp[/]
   GET subapp.views:index
   POST subapp.views:create
